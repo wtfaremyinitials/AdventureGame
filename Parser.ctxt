@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=class\ Parser
+comment1.target=commands
+comment2.params=
+comment2.target=void\ showCommands()
+comment2.text=\nPrint\ out\ a\ list\ of\ valid\ command\ words.\n\n
+comment3.params=
+comment3.target=Parser()
+comment4.params=
+comment4.target=Command\ getCommand()
+numComments=5

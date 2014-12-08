@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=class\ Command
+comment0.text=\nClass\ Command\ -\ Part\ of\ the\ "Zork"\ game.\n\nauthor\:\ \ Michael\ Kolling\nversion\:\ 1.0\ndate\:\ \ \ \ July\ 1999\n\nThis\ class\ holds\ information\ about\ a\ command\ that\ was\ issued\ by\ the\ user.\nA\ command\ currently\ consists\ of\ two\ strings\:\ a\ command\ word\ and\ a\ second\nword\ (for\ example,\ if\ the\ command\ was\ "take\ map",\ then\ the\ two\ strings\nobviously\ are\ "take"\ and\ "map").\n\nThe\ way\ this\ is\ used\ is\:\ Commands\ are\ already\ checked\ for\ being\ valid\ncommand\ words.\ If\ the\ user\ entered\ an\ invalid\ command\ (a\ word\ that\ is\ not\nknown)\ then\ the\ command\ word\ is\ <null>.\n\nIf\ the\ command\ had\ only\ one\ word,\ then\ the\ second\ word\ is\ <null>.\n\nThe\ second\ word\ is\ not\ checked\ at\ the\ moment.\ It\ can\ be\ anything.\ If\ this\ngame\ is\ extended\ to\ deal\ with\ items,\ then\ the\ second\ part\ of\ the\ command\nshould\ probably\ be\ changed\ to\ be\ an\ item\ rather\ than\ a\ String.\n\n
+comment1.params=
+comment1.target=String\ getCommandWord()
+comment1.text=\nReturn\ the\ command\ word\ (the\ first\ word)\ of\ this\ command.\ If\ the\ncommand\ was\ not\ understood,\ the\ result\ is\ null.\n\n
+comment2.params=
+comment2.target=boolean\ isUnknown()
+comment2.text=\nReturn\ true\ if\ this\ command\ was\ not\ understood.\n\n
+comment3.params=
+comment3.target=String\ getSecondWord()
+comment3.text=\nReturn\ the\ second\ word\ of\ this\ command.\ Returns\ null\ if\ there\ was\ no\nsecond\ word.\n\n
+comment4.params=firstWord\ secondWord
+comment4.target=Command(String,String)
+comment4.text=\nCreate\ a\ command\ object.\ First\ and\ second\ word\ must\ be\ supplied,\ but\neither\ one\ (or\ both)\ can\ be\ null.\ The\ command\ word\ should\ be\ null\ to\nindicate\ that\ this\ was\ a\ command\ that\ is\ not\ recognised\ by\ this\ game.\n\n
+comment5.target=secondWord
+comment6.target=commandWord
+comment7.params=
+comment7.target=boolean\ hasSecondWord()
+comment7.text=\nReturn\ true\ if\ the\ command\ has\ a\ second\ word.\n\n
+numComments=8
