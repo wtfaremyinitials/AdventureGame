@@ -2,6 +2,15 @@ package xyz.will.textcraft.command;
 
 import xyz.will.textcraft.*;
 
+/**
+ * Class HelpCommand
+ * 
+ * author: Will Franzen
+ * version: 1.0
+ * date: Dec 2014
+ * 
+ * This command will print the help command to the player.
+ */
 public class HelpCommand extends Command {
 
 	public HelpCommand(String argument) {
