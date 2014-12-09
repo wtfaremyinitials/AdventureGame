@@ -1,21 +1,17 @@
-BlueJ project "zork1"
+Adventure Game
+===
 
-Copyright (c) Michael Kolling
-              Monash University
+Copyright Will Franzen 2014
 
--------------
-This project is a simple framework for an adventure game. In this version,
-it has a few rooms and the ability for a player to walk between these rooms.
-That's all.
+*Game description*:
+This is a 3 dimensional open world text adventure game. The player can move freely around
+the world, modifying it as (s)he sees fit. The win condition of the game is finding diamonds,
+but the majority of the gameplay is focused around building.
 
-This project was written as the starting point of a small Java project.
-
-The goal is to extend the game:
-
-  - add items to rooms (items may have weight)
-  - add multiple players
-  - add commands (pick, drop, examine, read, ...)
-  - (anything you can think of, really...)
-
-To start this application, create an instance of class "Game" and call its
-"play" method.
+*Challenge tasks/Special features*:
+ 
+- 3 dimensional world
+- Modular command system using inheritance and reflection
+- 6 different items where the player can have multiple of any item
+- Chaining multiple commands together to be run at once with the 'then' pseudo-command
+- Dynamic world
