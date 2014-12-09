@@ -34,8 +34,15 @@ public class DigCommand extends Command {
 			return;
 		}
 		
-		player.addItem(world.getBlockAt(loc).getType());
+		BlockType type = world.getBlockAt(loc).getType();
+		
+		player.addItem(type);
 		world.setBlockAt(loc, BlockType.AIR);
+		
+		StringUtil.print("You broke a block of " + type.getName().toLowerCase() + ".");
+		
+		if(type == BlockType.DIAMOND)
+			StringUtil.print("You win! You may continue playing, or type \"quit\" to quit.");
 	}
 	
 }

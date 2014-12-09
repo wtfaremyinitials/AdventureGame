@@ -1,5 +1,7 @@
 package xyz.will.textcraft.command;
 
+import xyz.will.textcraft.StringUtil;
+
 
 public class UnknownCommand extends Command {
 
@@ -7,11 +9,8 @@ public class UnknownCommand extends Command {
 		super(argument);
 	}
 
-	public boolean isUnknown() {
-		return true;
-	}
-
 	public void run() {
+		StringUtil.print("Unknown command.");
 	}
 
 }

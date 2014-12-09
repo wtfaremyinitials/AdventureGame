@@ -16,7 +16,7 @@ public class GravityThread extends Thread {
 			for(Entity e : world.getEntities())
 				if(!e.isOnGround())
 					e.setLocation(e.getLocation().add(0, -1, 0));
-			try { Thread.sleep(500); } catch (InterruptedException e) {}
+			try { Thread.sleep(1000); } catch (InterruptedException e) {}
 		}
 	}	
 	

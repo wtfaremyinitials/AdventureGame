@@ -23,11 +23,13 @@ public class StuffCommand extends Command {
 			if(inventory.get(type) == null)
 				continue;
 			
-			invString += type.getName() + ": " + inventory.get(type) + "\n";
+			invString += inventory.get(type) + " " + type.getName().toLowerCase() + ", ";
 		}
 			
 		if(invString.equals(""))
 			invString = "an empty inventory.";
+		else
+			invString += "and nothing else.";
 		
 		StringUtil.print("You have " + invString);
 	}

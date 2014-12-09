@@ -10,7 +10,7 @@ public class CoordsCommand extends Command {
 
 	@Override
 	public void run() {
-		StringUtil.print("Your current coordinates are: " + player.getLocation().toString());
+		StringUtil.print("Your current coordinates are: " + player.getLocation().toString() + ".");
 	}
 	
 }

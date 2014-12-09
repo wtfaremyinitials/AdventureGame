@@ -11,6 +11,7 @@ import xyz.will.textcraft.World;
 public class Player extends Entity {
 
 	private Map<BlockType, Integer> inventory;
+	private BlockType hand;
 	
 	public Player(World world, Location location, Direction facing) {
 		super(world, location, facing);
@@ -29,6 +30,14 @@ public class Player extends Entity {
 	
 	public Map<BlockType, Integer> getInventory() {
 		return inventory;
+	}
+	
+	public BlockType getItemInHand() {
+		return hand;
+	}
+	
+	public void setItemInHand(BlockType hand) {
+		this.hand = hand;
 	}
 	
 }

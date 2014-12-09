@@ -26,9 +26,24 @@ public enum BlockType {
 		return name;
 	}
 	
+	public String getLongName() {
+		if(this == BlockType.AIR)
+			return "nothing but air";
+		if(this == BlockType.DIAMOND)
+			return "sparkling diamonds";	
+		return name;
+	}
+	
 	public static BlockType fromID(int id) {
 		for(BlockType t : values())
 			if(t.id == id)
+				return t;
+		return null;
+	}
+	
+	public static BlockType fromName(String name) {
+		for(BlockType t : values())
+			if(t.getName().equalsIgnoreCase(name))
 				return t;
 		return null;
 	}

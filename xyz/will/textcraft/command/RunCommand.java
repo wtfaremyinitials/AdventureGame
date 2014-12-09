@@ -34,5 +34,7 @@ public class RunCommand extends Command {
 		}
 		
 		player.setLocation(loc);
+		
+		StringUtil.print("You ran 3 blocks to the " + dirString.toLowerCase() + ".");
 	}
 }

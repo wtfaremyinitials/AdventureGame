@@ -35,6 +35,8 @@ public class WalkCommand extends Command {
 		}
 		
 		player.setLocation(loc);
+		
+		StringUtil.print("You walked 1 block to the " + dirString.toLowerCase() + ".");
 	}
 	
 }

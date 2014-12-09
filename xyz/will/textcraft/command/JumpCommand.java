@@ -6,28 +6,27 @@ import xyz.will.textcraft.StringUtil;
 
 public class JumpCommand extends Command {
 	
+	private static boolean firstJump = true;
+	
 	public JumpCommand(String argument) {
 		super(argument);
 	}
-
 	
 	public void run() {
 		String dirString = getArgument();
 		
-		if(dirString == null) {
-			StringUtil.print("You must specify a direction!");
-			return;
+		Direction dir = null;
+		
+		if(dirString != null) {
+			dir = Direction.fromString(dirString);
+			if(dir == null) {
+				StringUtil.print("Unknown direction!");
+			}
 		}
 		
-		Direction dir = Direction.fromString(dirString);
-		
-		if(dir == null) {
-			StringUtil.print("Unknown direction!");
-			return;
-		}
-		
-		Location loc = player.getLocation().add(dir, 1);
-		loc = loc.add(0, 1, 0);
+		Location loc = player.getLocation().add(Direction.UP, 1);
+		if(dir != null)
+			loc = loc.add(dir, 1);
 		
 		if(!world.isClear(loc)) {
 			StringUtil.print("You would run in to something");
@@ -35,6 +34,16 @@ public class JumpCommand extends Command {
 		}
 		
 		player.setLocation(loc);
+		
+		if(dirString == null)
+			StringUtil.print("You jumped.");
+		else
+			StringUtil.print("You jumped " + dirString.toLowerCase() + ".");
+		
+		if(firstJump && dirString == null)
+			StringUtil.print("Hey! You can jump in directions as well.\ne.g: jump north");
+		
+		firstJump = false;
 	}
 	
 }

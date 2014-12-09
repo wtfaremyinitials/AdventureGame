@@ -13,6 +13,7 @@ public class HelpCommand extends Command {
 	    StringUtil.print("");
 	    StringUtil.print("Your command words are:");
 	    StringUtil.print(StringUtil.join(" ", Game.getInstance().getParser().getCommandWords()));
+	    StringUtil.print("Commands can be strung together in sequence with 'then'\ne.g: jump then place down");
 	}
 	
 }

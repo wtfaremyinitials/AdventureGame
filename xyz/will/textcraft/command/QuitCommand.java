@@ -1,5 +1,7 @@
 package xyz.will.textcraft.command;
 
+import xyz.will.textcraft.StringUtil;
+
 
 public class QuitCommand extends Command {
 
@@ -8,6 +10,8 @@ public class QuitCommand extends Command {
 	}
 
 	public void run() {
+		StringUtil.print("Thanks for playing!");
+		System.exit(1);
 	}
 
 }

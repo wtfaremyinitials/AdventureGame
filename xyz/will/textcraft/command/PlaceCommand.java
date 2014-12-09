@@ -26,14 +26,36 @@ public class PlaceCommand extends Command {
 			return;
 		}
 		
-		Location loc = player.getLocation().add(dir, 1);
-		
-		if(!world.isClear(loc)) {
-			StringUtil.print("You would run in to something");
+		if(player.getItemInHand() == null) {
+			StringUtil.print("You must select an item first!");
 			return;
 		}
 		
-		player.setLocation(loc);
+		Integer num = player.getInventory().get(player.getItemInHand());
+		
+		if(num == null) {
+			StringUtil.print("You do not have any " + player.getItemInHand().getName().toLowerCase() + "!");
+			return;
+		}
+
+		int count = (int) num;
+		
+		if(count == 0) {
+			StringUtil.print("You do not have enough " + player.getItemInHand().getName().toLowerCase() + "!");
+			return;
+		}
+		
+		Location loc = player.getLocation().add(dir, 1);
+		
+		if(!world.isClear(loc)) {
+			StringUtil.print("There is a block in the way!");
+			return;
+		}
+		
+		world.setBlockAt(loc, player.getItemInHand());
+		player.getInventory().put(player.getItemInHand(), count-1);
+		
+		StringUtil.print("You placed a block of " + player.getItemInHand().getName().toLowerCase() + " to the " + dirString.toLowerCase() + ".");
 	}
 	
 }
